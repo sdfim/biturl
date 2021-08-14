@@ -9,7 +9,7 @@ Your shortened URLs can be used in publications, advertisements, blogs, forums, 
 `cp .env.dist .env` 
 
 and fill in parameters: <br>
-* APP_ENV=prom <br>
+* APP_ENV=prod <br>
 * DATABASE_URL <br>
 * YOUR_HOST_NAME <br>
 <br>
