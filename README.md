@@ -6,7 +6,10 @@ Your shortened URLs can be used in publications, advertisements, blogs, forums, 
 
 `git clone git@github.com:sdfim/biturl.git` <br>
 `cp .env.dist .env` <br> 
-and fill in parameters <br>
+and fill in parameters: <br>
+APP_ENV=prom <br>
+DATABASE_URL <br>
+YOUR_HOST_NAME <br>
 `composer install` <br>
 `php bin/console doctrine:migrations:migrate` <br>
 `php bin/console cache:clear --env=dev` <br>
