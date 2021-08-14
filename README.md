@@ -4,7 +4,7 @@ Your shortened URLs can be used in publications, advertisements, blogs, forums, 
 
 ## **install:**
 
-`git clone git@github.com:sdfim/url_shorten.git` <br>
+`git clone git@github.com:sdfim/biturl.git` <br>
 `cp .env.dist .env` <br> 
 and fill in parameters <br>
 `composer install` <br>
