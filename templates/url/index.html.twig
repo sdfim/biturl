@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}tool to shorten a URL{% endblock %}
+
+{% block body %}
+
+<div class="container-sm" style="margin: 70px;">
+    <div class="row justify-content-center ">
+        <div class="card col-8  shadow-sm" >
+            <div class="card-body">
+            <form id="short">
+                <h1>Paste the URL to be shortened</h1>
+                <div class="input-group mb-3">
+                    <input type="text" name="longurl" id="longurl" class="form-control" placeholder="Enter the link here" aria-label="" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                    <button id="btn" class="btn btn-outline-secondary" type="button">Shorten URL</button>
+                    </div>
+                </div>
+            </form>
+            <div id="info" >
+                <p>This is a tool to shorten a URL or reduce a link<br>Use our URL Shortener to create a shortened link making it easy to remember</p>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+$(function () {
+    function short_url_ajax () {
+        $.post('{{ path("short_url")}}', { longurl: $('#longurl').val() }, function(data) {
+            $("#info").empty();
+            $("#info").append('<h4>Your shortened URL: </h4>');
+            $("#info").append('<p>' + data + '</p>');
+            console.log(data);
+        });
+    }
+	$(document).on('keypress',function(e) {
+        if(e.which == 13) {
+            short_url_ajax();
+            e.preventDefault();
+            return;
+        }
+    });
+    $('#btn').click(function () {
+        short_url_ajax();
+	});
+});
+
+</script>
+</body>
+
+{% endblock %}
